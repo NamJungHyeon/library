@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>도서관 웹페이지</title>
+</head>
+<body>
+    <h1>도서관 웹페이지</h1>
+    <h2>멤버 정보</h2>
+    <ul>
+        {% for member in members %}
+            <li>{{ member }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>책 상태 정보</h2>
+    <ul>
+        {% for book, status in books.items() %}
+            <li>{{ book }} - {{ status }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>멤버 추가</h2>
+    <form action="/add_member" method="post">
+        멤버 이름 : <input type="text" name="member_name" placeholder="이름">
+        멤버 전화번호 : <input type="text" name="member_phone" placeholder="전화번호">
+        <input type="submit" value="추가">
+    </form>
+
+    <h2>멤버 삭제</h2>
+    <form action="/remove_member" method="post">
+        멤버 이름 : <input type="text" name="member_name" placeholder="멤버 삭제">
+        <input type="submit" value="삭제">
+    </form>
+
+    <h2>책 추가</h2>
+    <form action="/add_book" method="post">
+        책 제목 : <input type="text" name="book_name" placeholder="책 제목">
+        책 저자 : <input type="text" name="book_author" placeholder="책 저자">
+        <input type="submit" value="추가">
+    </form>
+
+    <h2>책 삭제</h2>
+    <form action="/remove_book" method="post">
+        책 제목 : <input type="text" name="book_name" placeholder="책 삭제">
+        <input type="submit" value="삭제">
+    </form>
+
+    <h2>책 대출</h2>
+    <form action="/borrow_book" method="post">
+        멤버 이름 : <input type="text" name="member_name" placeholder="이름">
+        책 제목 : <input type="text" name="book_name" placeholder="책 제목">
+        <input type="submit" value="대출">
+    </form>
+
+    <h2>책 반납</h2>
+    <form action="/return_book" method="post">
+        멤버 이름 : <input type="text" name="member_name" placeholder="이름">
+        책 제목 : <input type="text" name="book_name" placeholder="책 반납">
+        <input type="submit" value="반납">
+    </form>
+</body>
+</html>
