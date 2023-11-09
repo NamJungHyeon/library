@@ -6,7 +6,6 @@
 <body>
     <h1>도서관 웹페이지</h1>
     <h2>멤버 정보</h2>
-    <h3>이종원 바보</h3>
     <ul>
         {% for member in members %}
             <li>{{ member }}</li>
@@ -54,11 +53,11 @@
     </form>
 
     <h2>책 반납</h2>
-    <form action="/return_book" method="post">
+    <form action="/sreturn_book" method="post">
         멤버 이름 : <input type="text" name="member_name" placeholder="이름">
         책 제목 : <input type="text" name="book_name" placeholder="책 반납">
         <input type="submit" value="반납">
     </form>
-    <h3>Hello World!</h3>
+    <h3>Good Bye~~~~~~~~!!!</h3>
 </body>
 </html>
