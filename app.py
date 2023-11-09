@@ -26,6 +26,7 @@ def remove_member():
     member_name = request.form['member_name']
     if member_name in members:
         del members[member_name]
+	print(Hello)
     return redirect(url_for('index'))
 
 @app.route('/add_book', methods=['POST'])
