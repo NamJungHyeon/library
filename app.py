@@ -59,5 +59,7 @@ def return_book():
         books[book_name] = 'available'
     return redirect(url_for('index'))
 
+print(Good Bye)
+
 if __name__ == '__main__':
     app.run(debug=True)
