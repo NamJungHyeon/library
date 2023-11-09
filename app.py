@@ -53,7 +53,7 @@ def borrow_book():
 
 @app.route('/return_book', methods=['POST'])
 def return_book():
-    # 책 반납 기능 구현
+    # 책 반납 기능 구현 yes
     book_name = request.form['book_name']
     if book_name in books and books[book_name] == 'borrowed':
         books[book_name] = 'available'
