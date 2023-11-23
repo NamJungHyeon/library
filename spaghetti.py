@@ -20,11 +20,11 @@ fig, axes = plt.subplots(2, 2, figsize=FIGURE_SIZE)
 a, b = data[:, 0], data[:, 1]
 axes[0, 0].bar(['Mean', 'Median'], [np.mean(a), np.median(a)], label='Variable 1', color='blue', alpha=0.7)
 axes[0, 0].bar(['Mean', 'Median'], [np.mean(b), np.median(b)], label='Variable 2', color='green', alpha=0.7)
-axes[0, 0].legend()
+axes[0, 0].legend(loc='upper right')
 axes[0, 0].set_title('Descriptive Statistics: Mean and Median')
 
 # Heatmap for correlation analysis
-sns.heatmap(np.corrcoef(data.T), annot=True, ax=axes[0, 1], annot_kws={"size": 10})
+sns.heatmap(np.corrcoef(data.T), annot=True, ax=axes[0, 1], annot_kws={"size": 12}, cmap='coolwarm')
 axes[0, 1].set_title('Correlation Analysis')
 
 # Histograms of variables
@@ -47,3 +47,4 @@ fig.suptitle('Exploratory Data Analysis')
 # Adjust layout
 plt.tight_layout()
 plt.show()
+print('Done')
