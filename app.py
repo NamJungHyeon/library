@@ -60,6 +60,7 @@ def return_book():
     return redirect(url_for('index'))
 
 print(Welcome)
+print(Bye)
 
 if __name__ == '__main__':
     app.run(debug=True)
